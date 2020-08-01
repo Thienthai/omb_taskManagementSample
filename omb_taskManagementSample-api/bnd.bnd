@@ -1,0 +1,10 @@
+Bundle-Name: omb_taskManagementSample-api
+Bundle-SymbolicName: com.ombcrew.taskManagementSample.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.ombcrew.taskManagementSample.exception,\
+	com.ombcrew.taskManagementSample.model,\
+	com.ombcrew.taskManagementSample.service,\
+	com.ombcrew.taskManagementSample.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../omb_taskManagementSample-service/service.xml

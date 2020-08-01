@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+<service-builder package-path="com.ombcrew.taskManagementSample">
+	<author>OMB</author>
+	<namespace>OMBTFA</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="TaskManagementSample" human-name="Task Management Sample">
+
+		<!-- PK fields -->
+
+		<column name="taskId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Other fields -->
+
+		<column name="createdUserId" type="long" />
+		<column name="createdDate" type="Date" />
+		<column name="title " type="String" />
+		<column name="description" type="String" />
+		<column name="assignedUserId" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="taskId" />
+		</order>
+	</entity>
+</service-builder>
