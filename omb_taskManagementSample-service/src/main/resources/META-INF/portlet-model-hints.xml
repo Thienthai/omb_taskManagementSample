@@ -6,7 +6,7 @@
 		<field name="groupId" type="long" />
 		<field name="createdUserId" type="long" />
 		<field name="createdDate" type="Date" />
-		<field name="title " type="String" />
+		<field name="title" type="String" />
 		<field name="description" type="String" />
 		<field name="assignedUserId" type="long" />
 	</model>

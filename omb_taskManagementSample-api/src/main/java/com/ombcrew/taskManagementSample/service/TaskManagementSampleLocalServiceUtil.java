@@ -37,6 +37,15 @@ public class TaskManagementSampleLocalServiceUtil {
 	 *
 	 * Never modify this class directly. Add custom service methods to <code>com.ombcrew.taskManagementSample.service.impl.TaskManagementSampleLocalServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
+	public static com.ombcrew.taskManagementSample.model.TaskManagementSample
+		addtaskManagementSample(
+			String title, long createdUserId, String description,
+			long assignedUserId,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext) {
+
+		return getService().addtaskManagementSample(
+			title, createdUserId, description, assignedUserId, serviceContext);
+	}
 
 	/**
 	 * Adds the Task Management Sample to the database. Also notifies the appropriate model listeners.
@@ -50,6 +59,17 @@ public class TaskManagementSampleLocalServiceUtil {
 				taskManagementSample) {
 
 		return getService().addTaskManagementSample(taskManagementSample);
+	}
+
+	public static int countByG_T(long groupId, String title) {
+		return getService().countByG_T(groupId, title);
+	}
+
+	/**
+	 * counter
+	 */
+	public static int countByGroupId(long groupId) {
+		return getService().countByGroupId(groupId);
 	}
 
 	/**
@@ -73,6 +93,10 @@ public class TaskManagementSampleLocalServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().deletePersistedModel(persistedModel);
+	}
+
+	public static boolean deleteSample(long taskId) {
+		return getService().deleteSample(taskId);
 	}
 
 	/**
@@ -194,6 +218,23 @@ public class TaskManagementSampleLocalServiceUtil {
 		return getService().fetchTaskManagementSample(taskId);
 	}
 
+	public static java.util.List
+		<com.ombcrew.taskManagementSample.model.TaskManagementSample> findByG_T(
+			long groupId, String title, int start, int end) {
+
+		return getService().findByG_T(groupId, title, start, end);
+	}
+
+	/**
+	 * finder
+	 */
+	public static java.util.List
+		<com.ombcrew.taskManagementSample.model.TaskManagementSample>
+			findByGroupId(long groupId, int start, int end) {
+
+		return getService().findByGroupId(groupId, start, end);
+	}
+
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery
 		getActionableDynamicQuery() {
 
@@ -227,6 +268,15 @@ public class TaskManagementSampleLocalServiceUtil {
 	}
 
 	/**
+	 * entity
+	 */
+	public static com.ombcrew.taskManagementSample.model.TaskManagementSample
+		getSample(long taskId) {
+
+		return getService().getSample(taskId);
+	}
+
+	/**
 	 * Returns the Task Management Sample with the primary key.
 	 *
 	 * @param taskId the primary key of the Task Management Sample
@@ -238,6 +288,21 @@ public class TaskManagementSampleLocalServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().getTaskManagementSample(taskId);
+	}
+
+	public static java.util.List
+		<com.ombcrew.taskManagementSample.model.TaskManagementSample>
+			getTaskManagementSample(
+				long groupId, String title, int start, int end) {
+
+		return getService().getTaskManagementSample(groupId, title, start, end);
+	}
+
+	/**
+	 * crud
+	 */
+	public static int getTaskManagementSampleCount(long groupId, String title) {
+		return getService().getTaskManagementSampleCount(groupId, title);
 	}
 
 	/**
@@ -265,6 +330,16 @@ public class TaskManagementSampleLocalServiceUtil {
 	 */
 	public static int getTaskManagementSamplesCount() {
 		return getService().getTaskManagementSamplesCount();
+	}
+
+	public static boolean updataskManagementSample(
+		long taskId, String title, long createdUserId, String description,
+		long assignedUserId,
+		com.liferay.portal.kernel.service.ServiceContext serviceContext) {
+
+		return getService().updataskManagementSample(
+			taskId, title, createdUserId, description, assignedUserId,
+			serviceContext);
 	}
 
 	/**

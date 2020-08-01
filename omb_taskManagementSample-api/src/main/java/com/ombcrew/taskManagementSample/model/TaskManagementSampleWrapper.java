@@ -48,7 +48,7 @@ public class TaskManagementSampleWrapper
 		attributes.put("groupId", getGroupId());
 		attributes.put("createdUserId", getCreatedUserId());
 		attributes.put("createdDate", getCreatedDate());
-		attributes.put("title ", getTitle());
+		attributes.put("title", getTitle());
 		attributes.put("description", getDescription());
 		attributes.put("assignedUserId", getAssignedUserId());
 
@@ -81,7 +81,7 @@ public class TaskManagementSampleWrapper
 			setCreatedDate(createdDate);
 		}
 
-		String title = (String)attributes.get("title ");
+		String title = (String)attributes.get("title");
 
 		if (title != null) {
 			setTitle(title);
@@ -298,7 +298,7 @@ public class TaskManagementSampleWrapper
 	/**
 	 * Sets the title of this Task Management Sample.
 	 *
-	 * @param title  the title of this Task Management Sample
+	 * @param title the title of this Task Management Sample
 	 */
 	@Override
 	public void setTitle(String title) {

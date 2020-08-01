@@ -3,7 +3,7 @@ create table OMBTFA_TaskManagementSample (
 	groupId LONG,
 	createdUserId LONG,
 	createdDate DATE null,
-	title  VARCHAR(75) null,
+	title VARCHAR(75) null,
 	description VARCHAR(75) null,
 	assignedUserId LONG
 );

@@ -137,7 +137,7 @@ public interface TaskManagementSampleModel
 	/**
 	 * Sets the title of this Task Management Sample.
 	 *
-	 * @param title  the title of this Task Management Sample
+	 * @param title the title of this Task Management Sample
 	 */
 	public void setTitle(String title);
 

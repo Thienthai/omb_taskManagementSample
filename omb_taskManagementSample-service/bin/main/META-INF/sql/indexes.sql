@@ -1,0 +1,1 @@
+create index IX_5135D14A on OMBTFA_TaskManagementSample (groupId, title[$COLUMN_LENGTH:75$]);

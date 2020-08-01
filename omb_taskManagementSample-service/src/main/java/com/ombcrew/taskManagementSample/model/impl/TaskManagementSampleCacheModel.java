@@ -73,7 +73,7 @@ public class TaskManagementSampleCacheModel
 		sb.append(createdUserId);
 		sb.append(", createdDate=");
 		sb.append(createdDate);
-		sb.append(", title =");
+		sb.append(", title=");
 		sb.append(title);
 		sb.append(", description=");
 		sb.append(description);

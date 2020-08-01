@@ -25,6 +25,7 @@ import com.liferay.portal.kernel.search.Indexable;
 import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.service.BaseLocalService;
 import com.liferay.portal.kernel.service.PersistedModelLocalService;
+import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -61,6 +62,9 @@ public interface TaskManagementSampleLocalService
 	 *
 	 * Never modify or reference this interface directly. Always use {@link TaskManagementSampleLocalServiceUtil} to access the Task Management Sample local service. Add custom service methods to <code>com.ombcrew.taskManagementSample.service.impl.TaskManagementSampleLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
+	public TaskManagementSample addtaskManagementSample(
+		String title, long createdUserId, String description,
+		long assignedUserId, ServiceContext serviceContext);
 
 	/**
 	 * Adds the Task Management Sample to the database. Also notifies the appropriate model listeners.
@@ -71,6 +75,13 @@ public interface TaskManagementSampleLocalService
 	@Indexable(type = IndexableType.REINDEX)
 	public TaskManagementSample addTaskManagementSample(
 		TaskManagementSample taskManagementSample);
+
+	public int countByG_T(long groupId, String title);
+
+	/**
+	 * counter
+	 */
+	public int countByGroupId(long groupId);
 
 	/**
 	 * Creates a new Task Management Sample with the primary key. Does not add the Task Management Sample to the database.
@@ -87,6 +98,8 @@ public interface TaskManagementSampleLocalService
 	@Override
 	public PersistedModel deletePersistedModel(PersistedModel persistedModel)
 		throws PortalException;
+
+	public boolean deleteSample(long taskId);
 
 	/**
 	 * Deletes the Task Management Sample with the primary key from the database. Also notifies the appropriate model listeners.
@@ -178,6 +191,15 @@ public interface TaskManagementSampleLocalService
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public TaskManagementSample fetchTaskManagementSample(long taskId);
 
+	public List<TaskManagementSample> findByG_T(
+		long groupId, String title, int start, int end);
+
+	/**
+	 * finder
+	 */
+	public List<TaskManagementSample> findByGroupId(
+		long groupId, int start, int end);
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 
@@ -200,6 +222,12 @@ public interface TaskManagementSampleLocalService
 		throws PortalException;
 
 	/**
+	 * entity
+	 */
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public TaskManagementSample getSample(long taskId);
+
+	/**
 	 * Returns the Task Management Sample with the primary key.
 	 *
 	 * @param taskId the primary key of the Task Management Sample
@@ -209,6 +237,16 @@ public interface TaskManagementSampleLocalService
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public TaskManagementSample getTaskManagementSample(long taskId)
 		throws PortalException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<TaskManagementSample> getTaskManagementSample(
+		long groupId, String title, int start, int end);
+
+	/**
+	 * crud
+	 */
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public int getTaskManagementSampleCount(long groupId, String title);
 
 	/**
 	 * Returns a range of all the Task Management Samples.
@@ -232,6 +270,10 @@ public interface TaskManagementSampleLocalService
 	 */
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getTaskManagementSamplesCount();
+
+	public boolean updataskManagementSample(
+		long taskId, String title, long createdUserId, String description,
+		long assignedUserId, ServiceContext serviceContext);
 
 	/**
 	 * Updates the Task Management Sample in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.

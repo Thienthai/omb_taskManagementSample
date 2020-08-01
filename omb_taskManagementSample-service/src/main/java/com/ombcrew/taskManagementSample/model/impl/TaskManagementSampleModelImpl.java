@@ -26,6 +26,7 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.model.impl.BaseModelImpl;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.service.UserLocalServiceUtil;
+import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 
 import com.ombcrew.taskManagementSample.model.TaskManagementSample;
@@ -75,7 +76,7 @@ public class TaskManagementSampleModelImpl
 	public static final Object[][] TABLE_COLUMNS = {
 		{"taskId", Types.BIGINT}, {"groupId", Types.BIGINT},
 		{"createdUserId", Types.BIGINT}, {"createdDate", Types.TIMESTAMP},
-		{"title ", Types.VARCHAR}, {"description", Types.VARCHAR},
+		{"title", Types.VARCHAR}, {"description", Types.VARCHAR},
 		{"assignedUserId", Types.BIGINT}
 	};
 
@@ -87,13 +88,13 @@ public class TaskManagementSampleModelImpl
 		TABLE_COLUMNS_MAP.put("groupId", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("createdUserId", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("createdDate", Types.TIMESTAMP);
-		TABLE_COLUMNS_MAP.put("title ", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("title", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("description", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("assignedUserId", Types.BIGINT);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table OMBTFA_TaskManagementSample (taskId LONG not null primary key,groupId LONG,createdUserId LONG,createdDate DATE null,title  VARCHAR(75) null,description VARCHAR(75) null,assignedUserId LONG)";
+		"create table OMBTFA_TaskManagementSample (taskId LONG not null primary key,groupId LONG,createdUserId LONG,createdDate DATE null,title VARCHAR(75) null,description VARCHAR(75) null,assignedUserId LONG)";
 
 	public static final String TABLE_SQL_DROP =
 		"drop table OMBTFA_TaskManagementSample";
@@ -109,6 +110,12 @@ public class TaskManagementSampleModelImpl
 	public static final String SESSION_FACTORY = "liferaySessionFactory";
 
 	public static final String TX_MANAGER = "liferayTransactionManager";
+
+	public static final long GROUPID_COLUMN_BITMASK = 1L;
+
+	public static final long TITLE_COLUMN_BITMASK = 2L;
+
+	public static final long TASKID_COLUMN_BITMASK = 4L;
 
 	public static void setEntityCacheEnabled(boolean entityCacheEnabled) {
 		_entityCacheEnabled = entityCacheEnabled;
@@ -321,9 +328,9 @@ public class TaskManagementSampleModelImpl
 			"createdDate",
 			(BiConsumer<TaskManagementSample, Date>)
 				TaskManagementSample::setCreatedDate);
-		attributeGetterFunctions.put("title ", TaskManagementSample::getTitle);
+		attributeGetterFunctions.put("title", TaskManagementSample::getTitle);
 		attributeSetterBiConsumers.put(
-			"title ",
+			"title",
 			(BiConsumer<TaskManagementSample, String>)
 				TaskManagementSample::setTitle);
 		attributeGetterFunctions.put(
@@ -353,6 +360,8 @@ public class TaskManagementSampleModelImpl
 
 	@Override
 	public void setTaskId(long taskId) {
+		_columnBitmask = -1L;
+
 		_taskId = taskId;
 	}
 
@@ -364,7 +373,19 @@ public class TaskManagementSampleModelImpl
 
 	@Override
 	public void setGroupId(long groupId) {
+		_columnBitmask |= GROUPID_COLUMN_BITMASK;
+
+		if (!_setOriginalGroupId) {
+			_setOriginalGroupId = true;
+
+			_originalGroupId = _groupId;
+		}
+
 		_groupId = groupId;
+	}
+
+	public long getOriginalGroupId() {
+		return _originalGroupId;
 	}
 
 	@JSON
@@ -418,7 +439,17 @@ public class TaskManagementSampleModelImpl
 
 	@Override
 	public void setTitle(String title) {
+		_columnBitmask |= TITLE_COLUMN_BITMASK;
+
+		if (_originalTitle == null) {
+			_originalTitle = _title;
+		}
+
 		_title = title;
+	}
+
+	public String getOriginalTitle() {
+		return GetterUtil.getString(_originalTitle);
 	}
 
 	@JSON
@@ -462,6 +493,10 @@ public class TaskManagementSampleModelImpl
 
 	@Override
 	public void setAssignedUserUuid(String assignedUserUuid) {
+	}
+
+	public long getColumnBitmask() {
+		return _columnBitmask;
 	}
 
 	@Override
@@ -570,6 +605,17 @@ public class TaskManagementSampleModelImpl
 
 	@Override
 	public void resetOriginalValues() {
+		TaskManagementSampleModelImpl taskManagementSampleModelImpl = this;
+
+		taskManagementSampleModelImpl._originalGroupId =
+			taskManagementSampleModelImpl._groupId;
+
+		taskManagementSampleModelImpl._setOriginalGroupId = false;
+
+		taskManagementSampleModelImpl._originalTitle =
+			taskManagementSampleModelImpl._title;
+
+		taskManagementSampleModelImpl._columnBitmask = 0;
 	}
 
 	@Override
@@ -690,11 +736,15 @@ public class TaskManagementSampleModelImpl
 
 	private long _taskId;
 	private long _groupId;
+	private long _originalGroupId;
+	private boolean _setOriginalGroupId;
 	private long _createdUserId;
 	private Date _createdDate;
 	private String _title;
+	private String _originalTitle;
 	private String _description;
 	private long _assignedUserId;
+	private long _columnBitmask;
 	private TaskManagementSample _escapedModel;
 
 }

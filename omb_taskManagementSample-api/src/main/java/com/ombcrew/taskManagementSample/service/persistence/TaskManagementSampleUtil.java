@@ -128,6 +128,368 @@ public class TaskManagementSampleUtil {
 	}
 
 	/**
+	 * Returns all the Task Management Samples where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByGroupId(long groupId) {
+		return getPersistence().findByGroupId(groupId);
+	}
+
+	/**
+	 * Returns a range of all the Task Management Samples where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TaskManagementSampleModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of Task Management Samples
+	 * @param end the upper bound of the range of Task Management Samples (not inclusive)
+	 * @return the range of matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByGroupId(
+		long groupId, int start, int end) {
+
+		return getPersistence().findByGroupId(groupId, start, end);
+	}
+
+	/**
+	 * Returns an ordered range of all the Task Management Samples where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TaskManagementSampleModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of Task Management Samples
+	 * @param end the upper bound of the range of Task Management Samples (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByGroupId(
+		long groupId, int start, int end,
+		OrderByComparator<TaskManagementSample> orderByComparator) {
+
+		return getPersistence().findByGroupId(
+			groupId, start, end, orderByComparator);
+	}
+
+	/**
+	 * Returns an ordered range of all the Task Management Samples where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TaskManagementSampleModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of Task Management Samples
+	 * @param end the upper bound of the range of Task Management Samples (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param useFinderCache whether to use the finder cache
+	 * @return the ordered range of matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByGroupId(
+		long groupId, int start, int end,
+		OrderByComparator<TaskManagementSample> orderByComparator,
+		boolean useFinderCache) {
+
+		return getPersistence().findByGroupId(
+			groupId, start, end, orderByComparator, useFinderCache);
+	}
+
+	/**
+	 * Returns the first Task Management Sample in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching Task Management Sample
+	 * @throws NoSuchTaskManagementSampleException if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample findByGroupId_First(
+			long groupId,
+			OrderByComparator<TaskManagementSample> orderByComparator)
+		throws com.ombcrew.taskManagementSample.exception.
+			NoSuchTaskManagementSampleException {
+
+		return getPersistence().findByGroupId_First(groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the first Task Management Sample in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching Task Management Sample, or <code>null</code> if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample fetchByGroupId_First(
+		long groupId,
+		OrderByComparator<TaskManagementSample> orderByComparator) {
+
+		return getPersistence().fetchByGroupId_First(
+			groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last Task Management Sample in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching Task Management Sample
+	 * @throws NoSuchTaskManagementSampleException if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample findByGroupId_Last(
+			long groupId,
+			OrderByComparator<TaskManagementSample> orderByComparator)
+		throws com.ombcrew.taskManagementSample.exception.
+			NoSuchTaskManagementSampleException {
+
+		return getPersistence().findByGroupId_Last(groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last Task Management Sample in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching Task Management Sample, or <code>null</code> if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample fetchByGroupId_Last(
+		long groupId,
+		OrderByComparator<TaskManagementSample> orderByComparator) {
+
+		return getPersistence().fetchByGroupId_Last(groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the Task Management Samples before and after the current Task Management Sample in the ordered set where groupId = &#63;.
+	 *
+	 * @param taskId the primary key of the current Task Management Sample
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next Task Management Sample
+	 * @throws NoSuchTaskManagementSampleException if a Task Management Sample with the primary key could not be found
+	 */
+	public static TaskManagementSample[] findByGroupId_PrevAndNext(
+			long taskId, long groupId,
+			OrderByComparator<TaskManagementSample> orderByComparator)
+		throws com.ombcrew.taskManagementSample.exception.
+			NoSuchTaskManagementSampleException {
+
+		return getPersistence().findByGroupId_PrevAndNext(
+			taskId, groupId, orderByComparator);
+	}
+
+	/**
+	 * Removes all the Task Management Samples where groupId = &#63; from the database.
+	 *
+	 * @param groupId the group ID
+	 */
+	public static void removeByGroupId(long groupId) {
+		getPersistence().removeByGroupId(groupId);
+	}
+
+	/**
+	 * Returns the number of Task Management Samples where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the number of matching Task Management Samples
+	 */
+	public static int countByGroupId(long groupId) {
+		return getPersistence().countByGroupId(groupId);
+	}
+
+	/**
+	 * Returns all the Task Management Samples where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @return the matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByG_T(
+		long groupId, String title) {
+
+		return getPersistence().findByG_T(groupId, title);
+	}
+
+	/**
+	 * Returns a range of all the Task Management Samples where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TaskManagementSampleModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param start the lower bound of the range of Task Management Samples
+	 * @param end the upper bound of the range of Task Management Samples (not inclusive)
+	 * @return the range of matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByG_T(
+		long groupId, String title, int start, int end) {
+
+		return getPersistence().findByG_T(groupId, title, start, end);
+	}
+
+	/**
+	 * Returns an ordered range of all the Task Management Samples where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TaskManagementSampleModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param start the lower bound of the range of Task Management Samples
+	 * @param end the upper bound of the range of Task Management Samples (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByG_T(
+		long groupId, String title, int start, int end,
+		OrderByComparator<TaskManagementSample> orderByComparator) {
+
+		return getPersistence().findByG_T(
+			groupId, title, start, end, orderByComparator);
+	}
+
+	/**
+	 * Returns an ordered range of all the Task Management Samples where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TaskManagementSampleModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param start the lower bound of the range of Task Management Samples
+	 * @param end the upper bound of the range of Task Management Samples (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param useFinderCache whether to use the finder cache
+	 * @return the ordered range of matching Task Management Samples
+	 */
+	public static List<TaskManagementSample> findByG_T(
+		long groupId, String title, int start, int end,
+		OrderByComparator<TaskManagementSample> orderByComparator,
+		boolean useFinderCache) {
+
+		return getPersistence().findByG_T(
+			groupId, title, start, end, orderByComparator, useFinderCache);
+	}
+
+	/**
+	 * Returns the first Task Management Sample in the ordered set where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching Task Management Sample
+	 * @throws NoSuchTaskManagementSampleException if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample findByG_T_First(
+			long groupId, String title,
+			OrderByComparator<TaskManagementSample> orderByComparator)
+		throws com.ombcrew.taskManagementSample.exception.
+			NoSuchTaskManagementSampleException {
+
+		return getPersistence().findByG_T_First(
+			groupId, title, orderByComparator);
+	}
+
+	/**
+	 * Returns the first Task Management Sample in the ordered set where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching Task Management Sample, or <code>null</code> if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample fetchByG_T_First(
+		long groupId, String title,
+		OrderByComparator<TaskManagementSample> orderByComparator) {
+
+		return getPersistence().fetchByG_T_First(
+			groupId, title, orderByComparator);
+	}
+
+	/**
+	 * Returns the last Task Management Sample in the ordered set where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching Task Management Sample
+	 * @throws NoSuchTaskManagementSampleException if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample findByG_T_Last(
+			long groupId, String title,
+			OrderByComparator<TaskManagementSample> orderByComparator)
+		throws com.ombcrew.taskManagementSample.exception.
+			NoSuchTaskManagementSampleException {
+
+		return getPersistence().findByG_T_Last(
+			groupId, title, orderByComparator);
+	}
+
+	/**
+	 * Returns the last Task Management Sample in the ordered set where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching Task Management Sample, or <code>null</code> if a matching Task Management Sample could not be found
+	 */
+	public static TaskManagementSample fetchByG_T_Last(
+		long groupId, String title,
+		OrderByComparator<TaskManagementSample> orderByComparator) {
+
+		return getPersistence().fetchByG_T_Last(
+			groupId, title, orderByComparator);
+	}
+
+	/**
+	 * Returns the Task Management Samples before and after the current Task Management Sample in the ordered set where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * @param taskId the primary key of the current Task Management Sample
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next Task Management Sample
+	 * @throws NoSuchTaskManagementSampleException if a Task Management Sample with the primary key could not be found
+	 */
+	public static TaskManagementSample[] findByG_T_PrevAndNext(
+			long taskId, long groupId, String title,
+			OrderByComparator<TaskManagementSample> orderByComparator)
+		throws com.ombcrew.taskManagementSample.exception.
+			NoSuchTaskManagementSampleException {
+
+		return getPersistence().findByG_T_PrevAndNext(
+			taskId, groupId, title, orderByComparator);
+	}
+
+	/**
+	 * Removes all the Task Management Samples where groupId = &#63; and title LIKE &#63; from the database.
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 */
+	public static void removeByG_T(long groupId, String title) {
+		getPersistence().removeByG_T(groupId, title);
+	}
+
+	/**
+	 * Returns the number of Task Management Samples where groupId = &#63; and title LIKE &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param title the title
+	 * @return the number of matching Task Management Samples
+	 */
+	public static int countByG_T(long groupId, String title) {
+		return getPersistence().countByG_T(groupId, title);
+	}
+
+	/**
 	 * Caches the Task Management Sample in the entity cache if it is enabled.
 	 *
 	 * @param taskManagementSample the Task Management Sample
