@@ -63,8 +63,8 @@ public interface TaskManagementSampleLocalService
 	 * Never modify or reference this interface directly. Always use {@link TaskManagementSampleLocalServiceUtil} to access the Task Management Sample local service. Add custom service methods to <code>com.ombcrew.taskManagementSample.service.impl.TaskManagementSampleLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
 	public TaskManagementSample addtaskManagementSample(
-		String title, long createdUserId, String description,
-		long assignedUserId, ServiceContext serviceContext);
+		String title, String description, long assignedUserId,
+		ServiceContext serviceContext);
 
 	/**
 	 * Adds the Task Management Sample to the database. Also notifies the appropriate model listeners.

@@ -95,7 +95,7 @@ public class TaskManagementSampleLocalServiceImpl
 		}
 	}
 	
-	public TaskManagementSample addtaskManagementSample(String title,long createdUserId,String description,long assignedUserId, ServiceContext serviceContext) {
+	public TaskManagementSample addtaskManagementSample(String title,String description,long assignedUserId, ServiceContext serviceContext) {
 		
 		/*** entity fields ***/
 		long taskId = counterLocalService.increment(TaskManagementSample.class.getName());
@@ -120,7 +120,7 @@ public class TaskManagementSampleLocalServiceImpl
 		TaskManagementSample tms = taskManagementSamplePersistence.create(taskId);
 		
 		tms.setTaskId(taskId);
-		tms.setCreatedUserId(createdUserId);
+		tms.setCreatedUserId(userId);
 		tms.setCreatedDate(createDate);
 		tms.setTitle(title);
 		tms.setDescription(description);

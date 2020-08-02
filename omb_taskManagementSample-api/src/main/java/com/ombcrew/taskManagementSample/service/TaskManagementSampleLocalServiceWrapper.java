@@ -36,12 +36,11 @@ public class TaskManagementSampleLocalServiceWrapper
 	@Override
 	public com.ombcrew.taskManagementSample.model.TaskManagementSample
 		addtaskManagementSample(
-			String title, long createdUserId, String description,
-			long assignedUserId,
+			String title, String description, long assignedUserId,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext) {
 
 		return _taskManagementSampleLocalService.addtaskManagementSample(
-			title, createdUserId, description, assignedUserId, serviceContext);
+			title, description, assignedUserId, serviceContext);
 	}
 
 	/**
