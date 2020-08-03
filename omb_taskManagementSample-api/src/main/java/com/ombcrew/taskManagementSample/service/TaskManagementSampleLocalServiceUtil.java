@@ -332,13 +332,11 @@ public class TaskManagementSampleLocalServiceUtil {
 	}
 
 	public static boolean updataskManagementSample(
-		long taskId, String title, long createdUserId, String description,
-		long assignedUserId,
+		long taskId, String title, String description,
 		com.liferay.portal.kernel.service.ServiceContext serviceContext) {
 
 		return getService().updataskManagementSample(
-			taskId, title, createdUserId, description, assignedUserId,
-			serviceContext);
+			taskId, title, description, serviceContext);
 	}
 
 	/**

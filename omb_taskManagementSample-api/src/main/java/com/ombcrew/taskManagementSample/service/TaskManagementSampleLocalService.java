@@ -272,8 +272,8 @@ public interface TaskManagementSampleLocalService
 	public int getTaskManagementSamplesCount();
 
 	public boolean updataskManagementSample(
-		long taskId, String title, long createdUserId, String description,
-		long assignedUserId, ServiceContext serviceContext);
+		long taskId, String title, String description,
+		ServiceContext serviceContext);
 
 	/**
 	 * Updates the Task Management Sample in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.

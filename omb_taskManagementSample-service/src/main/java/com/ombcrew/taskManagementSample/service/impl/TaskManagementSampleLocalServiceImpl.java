@@ -131,29 +131,18 @@ public class TaskManagementSampleLocalServiceImpl
 		return tms;
 	}
 	
-	public boolean updataskManagementSample(long taskId,String title,long createdUserId,String description,long assignedUserId, ServiceContext serviceContext) {
-		
-		long userId = serviceContext.getUserId();
-		User user = null;
-		String userName = null;
-		
-		try {
-			user = userLocalService.getUserById(userId);
-			userName = user.getFullName();
-		} catch (PortalException e) {
-			System.out.println(EXCEPTION_PREFIX + e.toString());
-		}
+	public boolean updataskManagementSample(long taskId,String title,String description, ServiceContext serviceContext) {
+
+		long assignUserId = serviceContext.getUserId();
 		
 		/*** entity ***/
 		TaskManagementSample tms;
 		try {
 			tms = getTaskManagementSample(taskId);
-			
-			tms.setTaskId(taskId);
-			tms.setCreatedUserId(createdUserId);
+		
 			tms.setTitle(title);
 			tms.setDescription(description);
-			tms.setAssignedUserId(assignedUserId);
+			tms.setAssignedUserId(assignUserId);
 			
 			tms = taskManagementSamplePersistence.update(tms);
 			
