@@ -155,8 +155,7 @@ public class TaskManagementSampleLocalServiceImpl
 		
 	}
 	
-	public boolean deleteSample(long taskId) {
-		
+	public boolean deleteSample(long taskId) { 
 		/*** entity ***/
 		TaskManagementSample tms = getSample(taskId);
 		
