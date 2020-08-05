@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <model-hints>
-	<model name="com.ombcrew.taskManagementSample.model.TaskManagementSample">
+	<model name="com.ombcrew.taskManagementSample.model.Task">
 		<field name="taskId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="createdUserId" type="long" />
@@ -9,5 +9,6 @@
 		<field name="title" type="String" />
 		<field name="description" type="String" />
 		<field name="assignedUserId" type="long" />
+		<field name="status" type="int" />
 	</model>
 </model-hints>
